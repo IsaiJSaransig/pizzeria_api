@@ -12,16 +12,16 @@ public class CustomerEntity {
     @Column(name = "id_customer", columnDefinition = "INT")
     private Integer idCustomer;
 
-    @Column(name = "name", columnDefinition = "VARCHAR")
+    @Column(name = "name", columnDefinition = "VARCHAR(50)")
     private String name;
 
-    @Column(name = "address", columnDefinition = "VARCHAR")
+    @Column(name = "address", columnDefinition = "VARCHAR(100)")
     private String address;
 
-    @Column(name = "phone", columnDefinition = "VARCHAR")
+    @Column(name = "phone", columnDefinition = "VARCHAR(10)")
     private String phone;
 
-    @Column(name = "email", columnDefinition = "VARCHAR")
+    @Column(name = "email", columnDefinition = "VARCHAR(50)")
     private String email;
 
     public Integer getIdCustomer() {

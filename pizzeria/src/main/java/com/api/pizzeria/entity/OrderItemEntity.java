@@ -1,9 +1,6 @@
 package com.api.pizzeria.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
@@ -19,6 +16,14 @@ public class OrderItemEntity {
     private Integer quantity;
     @Column(name = "price", columnDefinition = "DECIMAL(10,2)")
     private BigDecimal price;
+
+    @OneToOne
+    @JoinColumn(name = "id_pizza", insertable = false, updatable = false)
+    private PizzaEntity pizza;
+
+    @ManyToOne
+    @JoinColumn(name = "id_order", insertable = false, updatable = false)
+    private OrderEntity order;
 
     public OrderItemPK getId() {
         return id;

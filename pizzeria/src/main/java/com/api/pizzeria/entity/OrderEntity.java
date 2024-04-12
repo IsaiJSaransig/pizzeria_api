@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "pizza_order")
@@ -21,6 +22,13 @@ public class OrderEntity {
 
     @Column(columnDefinition = "DECIMAL(10,2)")
     private BigDecimal total;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItemEntity> orderItems;
+
+    @OneToOne
+    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
+    private CustomerEntity customer;
 
     public Integer getIdOrder() {
         return idOrder;

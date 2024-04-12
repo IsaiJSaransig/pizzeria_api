@@ -7,23 +7,23 @@ import java.io.Serializable;
 public class OrderItemPK implements Serializable {
 
     @Column(name = "id_item")
-    private Long itemId;
+    private Integer itemId;
     @Column(name = "id_order")
-    private Long orderId;
+    private Integer orderId;
 
-    public Long getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(Long itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 
-    public Long getOrderId() {
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 }
