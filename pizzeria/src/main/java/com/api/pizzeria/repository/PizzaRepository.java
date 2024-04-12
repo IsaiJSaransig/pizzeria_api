@@ -22,7 +22,7 @@ public class PizzaRepository {
     }
 
     public GetPizzaDTO getPizzaById(Integer id) {
-        return pizzaMapper.toGetPizzaDTO(pizzaCRUD.findById(id).get());
+        return pizzaMapper.toGetPizzaDTO(pizzaCRUD.findById(id).orElse(null));
     }
 
     public GetPizzaDTO createPizza(CreatePizzaDTO createPizzaDTO) {
