@@ -36,4 +36,18 @@ public class PizzaController {
     public ResponseEntity<List<GetPizzaDTO>> getPizzaByIngredient(@PathVariable("ingredient") String ingredient) {
         return new ResponseEntity<>(pizzaService.getPizzaByIngredient(ingredient), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deletePizza(@PathVariable("id") int id) {
+        boolean state = pizzaService.deletePizza(id);
+        return new ResponseEntity<>(state?HttpStatus.OK:HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<GetPizzaDTO> updatePizza(@PathVariable("id") int id, @RequestBody CreatePizzaDTO createPizzaDTO) {
+        if(pizzaService.getPizzaById(id) == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(pizzaService.updatePizza(id, createPizzaDTO), HttpStatus.OK);
+    }
 }
