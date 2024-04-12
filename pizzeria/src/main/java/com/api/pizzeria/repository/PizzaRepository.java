@@ -25,6 +25,10 @@ public class PizzaRepository {
         return pizzaMapper.toGetPizzaDTO(pizzaCRUD.findById(id).orElse(null));
     }
 
+    public List<GetPizzaDTO> getByIngredient(String ingredient) {
+        return pizzaMapper.toGetPizzaDTOList(pizzaCRUD.findByDescriptionContaining(ingredient));
+    }
+
     public GetPizzaDTO createPizza(CreatePizzaDTO createPizzaDTO) {
         PizzaEntity pizzaEntity = pizzaMapper.toPizzaEntity(createPizzaDTO);
         return pizzaMapper.toGetPizzaDTO(pizzaCRUD.save(pizzaEntity));

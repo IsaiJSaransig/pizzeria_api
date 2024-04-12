@@ -24,4 +24,8 @@ public class PizzaService {
     public GetPizzaDTO createPizza(CreatePizzaDTO pizza) {
         return pizzaRepository.createPizza(pizza);
     }
+
+    public List<GetPizzaDTO> getPizzaByIngredient(String ingredient) {
+        return pizzaRepository.getByIngredient(ingredient);
+    }
 }

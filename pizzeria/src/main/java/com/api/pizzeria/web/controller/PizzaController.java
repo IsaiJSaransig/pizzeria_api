@@ -31,4 +31,9 @@ public class PizzaController {
     public ResponseEntity<GetPizzaDTO> createPizza(@RequestBody CreatePizzaDTO createPizzaDTO) {
         return new ResponseEntity<>(pizzaService.createPizza(createPizzaDTO), HttpStatus.CREATED);
     }
+
+    @GetMapping("/ingredient/{ingredient}")
+    public ResponseEntity<List<GetPizzaDTO>> getPizzaByIngredient(@PathVariable("ingredient") String ingredient) {
+        return new ResponseEntity<>(pizzaService.getPizzaByIngredient(ingredient), HttpStatus.OK);
+    }
 }
