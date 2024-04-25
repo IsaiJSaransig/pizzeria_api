@@ -61,4 +61,20 @@ public class OrderEntity {
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
+
+    public List<OrderItemEntity> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItemEntity> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public CustomerEntity getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerEntity customer) {
+        this.customer = customer;
+    }
 }

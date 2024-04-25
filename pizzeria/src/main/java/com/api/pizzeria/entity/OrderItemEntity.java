@@ -56,4 +56,20 @@ public class OrderItemEntity {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    public PizzaEntity getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(PizzaEntity pizza) {
+        this.pizza = pizza;
+    }
+
+    public OrderEntity getOrder() {
+        return order;
+    }
+
+    public void setOrder(OrderEntity order) {
+        this.order = order;
+    }
 }
